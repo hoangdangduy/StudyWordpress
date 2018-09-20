@@ -1,1 +1,1 @@
-<?php get_header() ?>
+xinc chao
