@@ -1,1 +1,4 @@
-xinc chao
+<?php
+get_header();
+get_footer();
+?>
