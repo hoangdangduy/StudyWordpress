@@ -141,4 +141,30 @@ if ( ! function_exists( 'thachpham_menu' ) ) {
     wp_nav_menu( $menu );
   }
 }
+
+/**
+@ Tạo hàm phân trang cho index, archive.
+@ Hàm này sẽ hiển thị liên kết phân trang theo dạng chữ: Newer Posts & Older Posts
+@ thachpham_pagination()
+**/
+if ( !function_exists( 'thachpham_pagination' ) ) {
+    function thachpham_pagination() {
+        /*
+         * Không hiển thị phân trang nếu trang đó có ít hơn 2 trang
+         */
+         if ( $GLOBALS['wp_query']->max_num_page < 2 ) {
+             return '';
+         }
+    }
+    ?>
+    <nav class="pagination" role="navigation">
+        <?php if ( get_next_post() ) : ?>
+            <div class="prev"><?php next_post_link( __('Older Posts', 'thachpham')) ?></div>
+        <?php endif; ?>
+        <?php if ( get_previous_post_link() ) :?>
+            <div class="next"><?php previous_post_link( __('Newer Posts', 'thachpham') ) ?></div>
+        <?php endif; ?>
+    </nav><?php
+}
+
 ?>
