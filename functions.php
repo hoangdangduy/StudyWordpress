@@ -62,7 +62,8 @@
                                 'video',
                                 'image',
                                 'audio',
-                                'gallery'
+                                'gallery',
+                                'link'
                         )
                  );
 
@@ -289,4 +290,6 @@ if ( ! function_exists( 'thachpham_entry_tag' ) ) {
     endif;
   }
 }
+
+
 ?>
